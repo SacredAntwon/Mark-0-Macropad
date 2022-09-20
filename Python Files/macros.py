@@ -45,25 +45,7 @@ macros = {
             {"type" : "seperate", "wait" : 1, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.T, kc.W, kc.I, kc.T, kc.T, kc.E, kc.R, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]}
            },
           
-    "BS" :
-           {"Netflix" :
-            {"type" : "seperate", "wait" : 1, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.N, kc.E, kc.T, kc.F, kc.L, kc.I, kc.X, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]},
-           "Twitter" :
-            {"type" : "seperate", "wait" : 1, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.T, kc.W, kc.I, kc.T, kc.T, kc.E, kc.R, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]},
-           "toge" :
-            {"type" : "together", "wait" : 1, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.T, kc.W, kc.I, kc.T, kc.T, kc.E, kc.R, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]},
-           "SHILL" :
-            {"type" : "seperate", "wait" : 1, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.T, kc.W, kc.I, kc.T, kc.T, kc.E, kc.R, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]},
-           "BILL" :
-            {"type" : "seperate", "wait" : 1, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.T, kc.W, kc.I, kc.T, kc.T, kc.E, kc.R, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]},
-           "TILL" :
-            {"type" : "seperate", "wait" : 1, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.T, kc.W, kc.I, kc.T, kc.T, kc.E, kc.R, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]},
-           "STILL" :
-            {"type" : "seperate", "wait" : 1, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.T, kc.W, kc.I, kc.T, kc.T, kc.E, kc.R, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]},
-           "HILL" :
-            {"type" : "seperate", "wait" : 1, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.T, kc.W, kc.I, kc.T, kc.T, kc.E, kc.R, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]}
-           },
-          
+
     "CSGO" :
           {"rifle" :
            {"type" : "seperate", "wait" : 10, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.T, kc.W, kc.I, kc.T, kc.T, kc.E, kc.R, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]}
