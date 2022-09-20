@@ -10,7 +10,7 @@ _Step 2:_ While holding the boot button on the device, plug it into the computer
 
 _Step 3:_ A new directory should now appear for the device.
 
-_Step 4:_ Drag the file named `firmware.   ` , which should be located in the `firmware` folder in this repo, into the device directory, and the device should then automatically reboot.
+_Step 4:_ Drag the file named `firmware.   ` UPDATE, which should be located in the `firmware` folder in this repo, into the device directory, and the device should then automatically reboot.
 
 ## Uploading Code
 _Step 1:_ Install a software called [`Thonny`](https://thonny.org) onto your system.
