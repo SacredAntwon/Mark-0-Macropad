@@ -13,7 +13,7 @@ _Step 3:_ A new directory should now appear for the device.
 _Step 4:_ Drag the file named `firmware.   ` , which should be located in the `firmware` folder in this repo, into the device directory, and the device should then automatically reboot.
 
 ## Uploading Code
-_Step 1:_ Install a software called [`thonny`](https://thonny.org) onto your system.
+_Step 1:_ Install a software called [`Thonny`](https://thonny.org) onto your system.
 
 _Step 2:_ Once it is installed, click on `Tools` located on the top and then select `Options...`, which will make a menu appear. Select `Interpreter` from this menu. When it asks which interpreter you would like to use from the drop down, select `MicroPython (Raspberry Pi Pico)`. For the Port drop down selection, select a device that includes `COM`.
 
