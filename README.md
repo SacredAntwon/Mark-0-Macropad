@@ -31,7 +31,7 @@ _Step 8:_ You could check if the files uploaded succesfully by running `maintest
 
 _Step 9:_ If no files need to be modified, rename `maintest.py` to `main.py`. This will allow it to boot `main.py` if the device restarts and will not need `Thonny` to run it again.
 
-_Tip:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, you need to wipe the device and reupload the firmware.
+_Tip:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, UPDATE.
 
 ## Files
 _main.py_: This is the main file that will run on boot.
