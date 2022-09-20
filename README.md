@@ -19,6 +19,20 @@ _Step 2:_ Once it is installed, click on `Tools` located on the top and then sel
 
 _Step 3:_ Exit the menu and select the `View` button on the top. Click on `Files` and a checkmark should appear next to it.
 
+_Step 4:_ On the left side you will see the `Files` section, the top part being files on your computer and the bottom part being the files on the device. 
+
+_Step 5:_ If there are files in your device, select all of the files and delete them.
+
+_Step 6:_ In the top portion of the `Files` section, find the folder named `Python Files` which should be downloaded from this repo.
+
+_Step 7:_ Select all files in the `Python Files` folder and right click on it. Select the option labeled `Upload to /` and all files should be uploaded to the device.
+
+_Step 8:_ You could check if the files uploaded succesfully by running `maintest.py` or `main.py`, depending on what you have it named. To run it press the `Green Play Button` on the top of your screen.
+
+_Step 9:_ If no files need to be modified, rename `maintest.py` to `main.py`. This will allow it to boot `main.py` if the device restarts and will not need `Thonny` to run it again.
+
+_Tip:_ Use `Thonny` if you need/want to modify any of the files.
+
 ## Files
 _main.py_: This is the main file that will run on boot.
 
