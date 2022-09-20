@@ -3,7 +3,21 @@
 
 ## Parts List
 
-## Instructions To Install
+## Uploading Firmware
+_Step 1:_ With the device disconnected from the computer, hold the boot button located on the bottom of the board.
+
+_Step 2:_ While holding the boot button on the device, plug it into the computer and let go of the boot button.
+
+_Step 3:_ A new directory should now appear for the device.
+
+_Step 4:_ Drag the file named `firmware.   ` , which should be located in the `firmware` folder in this repo, into the device directory, and the device should then automatically reboot.
+
+## Uploading Code
+_Step 1:_ Install a software called `thonny` onto your system.
+
+_Step 2:_ Once it is installed, click on `Tools` located on the top and then select `Options...`, which will make a menu appear. Select `Interpreter` from this menu. When it asks which interpreter you would like to use from the drop down, select `MicroPython (Raspberry Pi Pico). For the port drop selection, select a device that includes `COM`.
+
+_Step 3:_ Exit the menu and select the `View` button on the top. Click on `Files` and a checkmark should appear next to it.
 
 ## Files
 _main.py_: This is the main file that will run on boot.
