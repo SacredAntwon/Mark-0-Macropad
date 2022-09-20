@@ -1,6 +1,5 @@
 from machine import Pin, I2C
 from ssd1306 import SSD1306_I2C
-from time import sleep
 import machine
 import keyboard
 import mouse

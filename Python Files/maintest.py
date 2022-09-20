@@ -1,6 +1,4 @@
 import layout
-#from os import listdir
-#import os
 from time import sleep
 import math
 import macros as m
