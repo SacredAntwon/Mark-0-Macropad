@@ -179,7 +179,6 @@ def show_menu(menu):
 
 
 def launch(filename):
-    """ Launch the Python script <filename> """
     global file_list
     # clear the screen
     layout.oled.fill_rect(0,0,layout.width,layout.height,0)

@@ -79,7 +79,6 @@ while button_bounce:
                         elementList = [0, -5]
                         drawList.append(elementList)
             
-            # elementList = [etch_x, etch_y]
             layout.oled.pixel(etch_x, etch_y, 1)
             layout.oled.show()
 

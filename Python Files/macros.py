@@ -40,9 +40,9 @@ macros = {
            "Vol-" :
             {"type" : "control", "wait" : .1, "keys" : [kc.VOL_DOWN]},
            "DisMute" :
-            {"type" : "together", "wait" : 1, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.T, kc.W, kc.I, kc.T, kc.T, kc.E, kc.R, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]},
+            {"type" : "together", "wait" : 1, "keys" : [kc.LEFT_CONTROL, kc.LEFT_SHIFT, kc.M]},
            "DisDeaf" :
-            {"type" : "seperate", "wait" : 1, "keys" : [kc.W, kc.W, kc.W, kc.PERIOD, kc.T, kc.W, kc.I, kc.T, kc.T, kc.E, kc.R, kc.PERIOD, kc.C, kc.O, kc.M, kc.ENTER]}
+            {"type" : "together", "wait" : 1, "keys" : [kc.LEFT_CONTROL, kc.LEFT_SHIFT, kc.D]}
            },
           
 

@@ -83,10 +83,7 @@ def cards():
     for i in range(len(fullDeck)-1, 0, -1):
         j = random.randint(0, i + 1)
         fullDeck[i], fullDeck[j] = fullDeck[j], fullDeck[i]
-        
-#     for item in fullDeck:
-        # print("{} of {}".format(item.rank, item.suit))
-    #print(len(fullDeck))
+
     return fullDeck
 
 def valueCard(currentCard):
@@ -115,7 +112,6 @@ def createCardString(cards):
     cardString = cards[0][0] + ":"
     for i in reversed(range(1, len(cards))):
         cardString += " " + cards[i].rank[0] + cards[i].suit[0]
-    #print(cardString)
     return cardString
     
 def game():
@@ -137,28 +133,20 @@ def game():
             person.append(card)
             sleep(1)
             if (i != 1) or (person[0] != "Dealer"):
-                #print("{} got {} of {}".format(person[0], card.rank, card.suit))
                 if (person[0] == "You"):
                     updateScreen(createCardString(person), 1)
                 else:
                     updateScreen(createCardString(person), 2)
-           # else:
-                #print("Dealer hides second card")
-    
-    #playerString = createCardString(playerCards)
-    #dealerString = createCardString(dealerCards[:-1])
+
     updateScreen(createCardString(playerCards), 1)
     updateScreen(createCardString(dealerCards[:-1]), 2)
     playerTotal = getTotal(playerCards)
     dealerTotal = getTotal(dealerCards[:-1])
-    # stringTotal = ("Y Tot: " + str(playerTotal) + " D Tot: " + str(dealerTotal))
     updateScreen(("YTtl:" + str(playerTotal) + "  DTtl:" + str(dealerTotal)), 3)
-    #print(playerTotal)
-    #print(dealerTotal)
+
     
     #print("Your Turn")
     while (playerTotal < 21):
-#         playerInput = input("Hit(h) or Stand(s)")
         #HIT
         if layout.button13.value():
             card = decks.pop(0)
@@ -166,7 +154,6 @@ def game():
             playerTotal = getTotal(playerCards)
             updateScreen(createCardString(playerCards), 1)
             updateScreen(("YTtl:" + str(playerTotal) + "  DTtl:" + str(dealerTotal)), 3)
-            #print("Your Total: ", playerTotal)
             sleep(.5)
         elif layout.button23.value():
             break
@@ -186,13 +173,10 @@ def game():
         dealerTotal = getTotal(dealerCards)
         updateScreen(createCardString(dealerCards), 2)
         updateScreen(("YTtl:" + str(playerTotal) + "  DTtl:" + str(dealerTotal)), 3)
-        #print("Dealer Total: ", dealerTotal)
-        
     
     dealerTotal = getTotal(dealerCards)
     updateScreen(createCardString(dealerCards), 2)
     updateScreen(("YTtl:" + str(playerTotal) + "  DTtl:" + str(dealerTotal)), 3)
-    #print("Dealer Has: ", dealerTotal)
     sleep(3)
     layout.oled.fill_rect(0,0,layout.width,layout.height,0)
     layout.oled.show()
@@ -232,6 +216,7 @@ def game():
         updateScreen(("$10000 added."), 2)
         sleep(1)
         updateScreen(("Play better!"), 3)
+        balance = 10000
     
     file1 = open("save.txt","w")
     file1.write(str(balance))
@@ -242,7 +227,7 @@ def game():
     layout.oled.show()
     updateScreen("Play", 1)
     updateScreen(("Blnc: $"+str(balance)), 2)
-    #StartEnd()
+
 
 def StartEnd():
     positions = [[1,1], [1,11], [1,21], [60,1], [60,11], [60,21]]
@@ -258,7 +243,6 @@ def StartEnd():
         
 while button_bounce:
     if layout.button11.value():
-        #decks = cards()
         sleep(1)
         game()
         
