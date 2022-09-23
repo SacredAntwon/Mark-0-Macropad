@@ -75,11 +75,12 @@ def running(categ):
     button_boun = True
 
     listCateg = macroJson[categ]
-
+    
     # Modify the container name for an empty section
     empty = ""
     #List the macros
     listKeys = list(listCateg.keys())
+
     page = 0
 
     # Finding the number of pages in a category
@@ -236,7 +237,16 @@ while True:
         sleep(2)
         exec(open("Blackjack.py").read())
         show_menu(file_list)
-
+    
+    # This will launch RGB settings
+    if layout.button13.value() and layout.button23.value():
+        layout.oled.fill_rect(0,0,layout.width,layout.height,0)
+        layout.oled.text("RGB", 1, 10)
+        layout.oled.show()
+        sleep(1)
+        exec(open("rgb.py").read())
+        show_menu(file_list)
+        
     # This will allow for testing of all buttons and display
     if layout.button11.value() and layout.button22.value() and layout.button13.value():
         layout.oled.fill_rect(0,0,layout.width,layout.height,0)
