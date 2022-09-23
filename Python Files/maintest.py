@@ -2,6 +2,8 @@ import layout
 from time import sleep
 import math
 import macros as m
+import re
+import keycode
 
 # Get the list of categories from macro.py and display the menu
 file_list = list(m.macros)
@@ -20,28 +22,39 @@ layout.oled.init_display()
 previous_value = True
 button_down = False
 
+# Splits string and converts each element to keycode (Hex)
+def convertKey(keyString):
+    keyList = []
+    itemList = []
+    keyList = re.sub( r"([A-Z])", r" \1", keyString).split()
+    for key in keyList:
+        itemList.append(keycode.keys[key])
+
+    return itemList
+
 # Function for determining what type of macro to use
 def macroType(listCateg, pageList, page, button):
-    itemList = listCateg[pageList[page][button]]['keys']
+    itemString = listCateg[pageList[page][button]]['keys']
+    itemList = convertKey(itemString)
     itemType = listCateg[pageList[page][button]]['type']
     itemSleep = listCateg[pageList[page][button]]['wait']
     if itemType == 'seperate':
         for item in itemList:
             layout.k.press(item)
             layout.k.release(item)
-        
+
     elif itemType == 'together':
         for item in itemList:
             layout.k.press(item)
         for item in itemList:
             layout.k.release(item)
-    
+
     elif itemType == 'control':
         layout.cc.send(itemList[0])
-    
+
     # Modify in macros.py under "wait" key
     sleep(itemSleep)
-                        
+
 # Function for displaying screen in a macro category
 def screen(page, all_pages):
     layout.oled.fill_rect(0,0,layout.width,layout.height,0)
@@ -57,18 +70,18 @@ def screen(page, all_pages):
 def running(categ):
     previous_val = True
     button_boun = True
-    
+
     listCateg = m.macros[categ]
-    
+
     # Modify the container name for an empty section
     empty = ""
     #List the macros
     listKeys = list(listCateg.keys())
     page = 0
-    
+
     # Finding the number of pages in a category
     total_page = math.ceil(len(listKeys)/6)
-    
+
     # Seperating a category of macros into pages
     count = 0
     pageList = []
@@ -81,10 +94,10 @@ def running(categ):
                 nestList.append(empty)
             count += 1
         pageList.append(nestList)
-    
+
     # Call screen function to display the macros
     screen(0, pageList)
-    
+
     # This while loop will run until rotary encoder is clicked
     while button_boun:
         if previous_val != layout.step_pin.value():
@@ -99,41 +112,41 @@ def running(categ):
                 else:
                     if page < total_page - 1:
                         page += 1
-                
+
                 screen(page, pageList)
 
             previous_val = layout.step_pin.value()
-        
+
         # Top left button
         if layout.button11.value():
              if pageList[page][0] != empty:
                 macroType(listCateg, pageList, page, 0)
-        
+
         # Top right button
         elif layout.button21.value():
              if pageList[page][1] != empty:
                 macroType(listCateg, pageList, page, 1)
-        
+
         # Middle left button
         elif layout.button12.value():
              if pageList[page][2] != empty:
                 macroType(listCateg, pageList, page, 2)
-        
+
         # Middle right button
         elif layout.button22.value():
              if pageList[page][3] != empty:
                 macroType(listCateg, pageList, page, 3)
-        
+
         # Bottom left button
         elif layout.button13.value():
              if pageList[page][4] != empty:
                 macroType(listCateg, pageList, page, 4)
-                
-        # Bottom right button  
+
+        # Bottom right button
         elif layout.button23.value():
              if pageList[page][5] != empty:
                 macroType(listCateg, pageList, page, 5)
-        
+
         # Exits the loop and goes back to main function
         if layout.button_pin.value() == False:
             layout.oled.fill_rect(0,0,layout.width,layout.height,0)
@@ -206,7 +219,7 @@ while True:
         sleep(2)
         exec(open("etch.py").read())
         show_menu(file_list)
-    
+
     # This will display buttons and launch blackjack
     if layout.button12.value() and layout.button22.value():
         layout.oled.fill_rect(0,0,layout.width,layout.height,0)
@@ -220,7 +233,7 @@ while True:
         sleep(2)
         exec(open("Blackjack.py").read())
         show_menu(file_list)
-    
+
     # This will allow for testing of all buttons and display
     if layout.button11.value() and layout.button22.value() and layout.button13.value():
         layout.oled.fill_rect(0,0,layout.width,layout.height,0)
@@ -229,7 +242,7 @@ while True:
         sleep(1)
         exec(open("Test.py").read())
         show_menu(file_list)
-    
+
     # This will launch the selected category
     if previous_value != layout.step_pin.value():
         if layout.step_pin.value() == False:
