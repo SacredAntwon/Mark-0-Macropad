@@ -1,12 +1,15 @@
 import layout
 from time import sleep
 import math
-import macros as m
 import re
 import keycode
+import json
 
-# Get the list of categories from macro.py and display the menu
-file_list = list(m.macros)
+# Get the list of categories from macros.json and display the menu
+with open('macros.json', 'r') as f:
+  macroJson = json.load(f)
+  
+file_list = list(macroJson)
 
 # Main menu line constants
 line = 1
@@ -71,7 +74,7 @@ def running(categ):
     previous_val = True
     button_boun = True
 
-    listCateg = m.macros[categ]
+    listCateg = macroJson[categ]
 
     # Modify the container name for an empty section
     empty = ""
