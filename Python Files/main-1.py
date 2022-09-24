@@ -1,4 +1,6 @@
 import layout
+from ws2812 import WS2812
+import machine
 from time import sleep
 import math
 import re
@@ -8,7 +10,8 @@ import json
 # Get the list of categories from macros.json and display the menu
 with open('macros.json', 'r') as f:
   macroJson = json.load(f)
-  
+
+# Convert to list
 file_list = list(macroJson)
 
 # Main menu line constants
@@ -25,6 +28,25 @@ layout.oled.init_display()
 previous_value = True
 button_down = False
 
+def setColor():
+    # Get the save data for last set color
+    with open('save.json', 'r') as f:
+      saveJson = json.load(f)
+      
+    # Get color codes
+    with open('colors.json', 'r') as f:
+      colorsJson = json.load(f)
+      
+    power = machine.Pin(11,machine.Pin.OUT)
+    power.value(1)
+    layout.oled.init_display()
+    
+    selectedColor = saveJson["lastColor"]
+    led = WS2812(12,1)
+    led.pixels_fill(colorsJson[selectedColor])
+    led.pixels_show()
+    
+      
 # Splits string and converts each element to keycode (Hex)
 def convertKey(keyString):
     keyList = []
@@ -204,6 +226,8 @@ def launch(filename):
     running(filename)
     show_menu(file_list)
 
+
+setColor()
 show_menu(file_list)
 
 # Repeat forever

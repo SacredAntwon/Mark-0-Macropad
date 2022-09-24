@@ -3,28 +3,32 @@ import machine
 from time import sleep
 import layout
 import math
+import json
 
 power = machine.Pin(11,machine.Pin.OUT)
 power.value(1)
 layout.oled.init_display()
 
-colors = {
-    'Off' : (0, 0, 0),
-    'Red' : (255, 0, 0),
-    'Blue' : (0, 0, 255),
-    'Green' : (0, 255, 0),
-    'White' : (255, 255, 255),
-    'Pink' : (255, 20, 147),
-    'Purple' : (180, 0, 255),
-    'Yellow' : (255, 150, 0),
-    'Orange' :(255, 100, 0)
-    }
+with open('colors.json', 'r') as f:
+  colors = json.load(f)
+  
+def jsonSave(key, value):
+    saveJson = open("save.json", "r")
+    jsonObject = json.load(saveJson)
+    saveJson.close()
+
+    jsonObject[key] = value
+
+    saveJson = open("save.json", "w")
+    json.dump(jsonObject, saveJson)
+    saveJson.close()
 
 def led(pageList, page, button):
     selectedColor = pageList[page][button]
     led = WS2812(12,1)
     led.pixels_fill(colors[selectedColor])
     led.pixels_show()
+    jsonSave("lastColor", selectedColor)
     
 def screen(page, all_pages):
     layout.oled.fill_rect(0,0,layout.width,layout.height,0)

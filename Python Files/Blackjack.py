@@ -2,12 +2,18 @@ import layout
 from time import sleep
 from collections import namedtuple
 import random
+import json
 
 layout.oled.init_display()
 
-file1 = open("save.txt","r")
-balance = int(file1.read())
-file1.close()
+with open('save.json', 'r') as f:
+  getBalance = json.load(f)
+
+print(getBalance)
+balance = getBalance["blackjackBalance"]
+# file1 = open("save.txt","r")
+# balance = int(file1.read())
+# file1.close()
 
 layout.oled.text("Play",1,1)
 layout.oled.text(("Blnc: $"+str(balance)),1,11)
@@ -15,6 +21,18 @@ layout.oled.text(("Blnc: $"+str(balance)),1,11)
 layout.oled.show()
 
 button_bounce = True
+
+def jsonSave(key, value):
+    saveJson = open("save.json", "r")
+    jsonObject = json.load(saveJson)
+    saveJson.close()
+
+    jsonObject[key] = value
+
+    saveJson = open("save.json", "w")
+    json.dump(jsonObject, saveJson)
+    saveJson.close()
+    
 def updateScreen(text, line):
     if line == 1:
         layout.oled.fill_rect(1,1,layout.width,10,0)
@@ -218,9 +236,10 @@ def game():
         updateScreen(("Play better!"), 3)
         balance = 10000
     
-    file1 = open("save.txt","w")
-    file1.write(str(balance))
-    file1.close()
+#     file1 = open("save.txt","w")
+#     file1.write(str(balance))
+#     file1.close()
+    jsonSave("blackjackBalance", balance)
     
     sleep(2)
     layout.oled.fill_rect(0,0,layout.width,layout.height,0)
