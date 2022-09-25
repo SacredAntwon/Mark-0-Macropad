@@ -1,4 +1,3 @@
-import re
 keys = {
 'A' : 0x04,
 'B' : 0x05,

@@ -8,7 +8,7 @@ import keycode
 import json
 
 # Get the list of categories from macros.json and display the menu
-with open('macros.json', 'r') as f:
+with open('JSONFiles/macros.json', 'r') as f:
   macroJson = json.load(f)
 
 # Convert to list
@@ -30,11 +30,11 @@ button_down = False
 
 def setColor():
     # Get the save data for last set color
-    with open('save.json', 'r') as f:
+    with open('JSONFiles/save.json', 'r') as f:
       saveJson = json.load(f)
       
     # Get color codes
-    with open('colors.json', 'r') as f:
+    with open('JSONFiles/colors.json', 'r') as f:
       colorsJson = json.load(f)
       
     power = machine.Pin(11,machine.Pin.OUT)

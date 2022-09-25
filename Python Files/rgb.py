@@ -9,17 +9,17 @@ power = machine.Pin(11,machine.Pin.OUT)
 power.value(1)
 layout.oled.init_display()
 
-with open('colors.json', 'r') as f:
+with open('JSONFiles/colors.json', 'r') as f:
   colors = json.load(f)
   
 def jsonSave(key, value):
-    saveJson = open("save.json", "r")
+    saveJson = open("JSONFiles/save.json", "r")
     jsonObject = json.load(saveJson)
     saveJson.close()
 
     jsonObject[key] = value
 
-    saveJson = open("save.json", "w")
+    saveJson = open("JSONFiles/save.json", "w")
     json.dump(jsonObject, saveJson)
     saveJson.close()
 

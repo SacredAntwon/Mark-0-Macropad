@@ -6,14 +6,11 @@ import json
 
 layout.oled.init_display()
 
-with open('save.json', 'r') as f:
+with open('JSONFiles/save.json', 'r') as f:
   getBalance = json.load(f)
 
 print(getBalance)
 balance = getBalance["blackjackBalance"]
-# file1 = open("save.txt","r")
-# balance = int(file1.read())
-# file1.close()
 
 layout.oled.text("Play",1,1)
 layout.oled.text(("Blnc: $"+str(balance)),1,11)
@@ -23,13 +20,13 @@ layout.oled.show()
 button_bounce = True
 
 def jsonSave(key, value):
-    saveJson = open("save.json", "r")
+    saveJson = open("JSONFiles/save.json", "r")
     jsonObject = json.load(saveJson)
     saveJson.close()
 
     jsonObject[key] = value
 
-    saveJson = open("save.json", "w")
+    saveJson = open("JSONFiles/save.json", "w")
     json.dump(jsonObject, saveJson)
     saveJson.close()
     
@@ -236,9 +233,6 @@ def game():
         updateScreen(("Play better!"), 3)
         balance = 10000
     
-#     file1 = open("save.txt","w")
-#     file1.write(str(balance))
-#     file1.close()
     jsonSave("blackjackBalance", balance)
     
     sleep(2)
