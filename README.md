@@ -10,7 +10,7 @@ _Step 2:_ While holding the boot button on the device, plug it into the computer
 
 _Step 3:_ A new directory should now appear for the device.
 
-_Step 4:_ Drag the file named `firmware.   ` UPDATE, which should be located in the `firmware` folder in this repo, into the device directory, and the device should then automatically reboot.
+_Step 4:_ Drag the file named `firmware.uf2`, which should be located in the `firmware` folder in this repo, into the device directory, and the device should then automatically reboot.
 
 ## Uploading Code
 _Step 1:_ Install a software called [`Thonny`](https://thonny.org) onto your system.
@@ -31,7 +31,7 @@ _Step 8:_ You could check if the files uploaded succesfully by running `maintest
 
 _Step 9:_ If no files need to be modified, rename `maintest.py` to `main.py`. This will allow it to boot `main.py` if the device restarts and will not need `Thonny` to run it again.
 
-_Tip:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, UPDATE.
+_Tip:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, you will need to upload a firmware that will rename `main.py` back to `main-1.py`. Here is the link to [`download`](https://forums.raspberrypi.com/download/file.php?id=45227&sid=cec97039a4f7ce336c4e816c979cb3d3) a file named `MicroPython_RenameMainDotPy`. Follow the steps from the 'Uploading Firmware' section to upload `MicroPython_RenameMainDotPy.uf2` firmware. After it is done, upload `firmware.uf2`, which is located in the `firmware` folder, once again.
 
 ## Files
 _main.py_: This is the main file that will run on boot.
