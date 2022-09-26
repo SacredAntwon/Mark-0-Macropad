@@ -37,11 +37,11 @@
    {"Chrome" :
     {"type" : "seperate", "wait" : 1, "keys" : "LeftguiCHROMEEnter"},
    "Steam" :
-    {"type" : "sperate", "wait" : 1, "keys" : "LeftguiSTEAMEnter"},
+    {"type" : "seperate", "wait" : 1, "keys" : "LeftguiSTEAMEnter"},
    "Discord" :
-    {"type" : "sperate", "wait" : 1, "keys" : "LeftguiDISCORDEnter"},
+    {"type" : "seperate", "wait" : 1, "keys" : "LeftguiDISCORDEnter"},
    "Spotify" :
-    {"type" : "sperate", "wait" : 1, "keys" : "LeftguiSPORTIFYEnter"}
+    {"type" : "seperate", "wait" : 1, "keys" : "LeftguiSPORTIFYEnter"}
    },
     
 "Audio" :

@@ -226,8 +226,8 @@ def launch(filename):
     running(filename)
     show_menu(file_list)
 
-
 setColor()
+
 show_menu(file_list)
 
 # Repeat forever
@@ -262,8 +262,23 @@ while True:
         exec(open("Blackjack.py").read())
         show_menu(file_list)
     
-    # This will launch RGB settings
+    # This will display buttons and launch colormemory
     if layout.button13.value() and layout.button23.value():
+        layout.oled.fill_rect(0,0,layout.width,layout.height,0)
+        layout.oled.text("Color Memory", 1, 10)
+        layout.oled.show()
+        sleep(1)
+        layout.oled.fill_rect(0,0,layout.width,layout.height,0)
+        layout.oled.text("Confirm",1,21)
+        layout.oled.text("Back",65,21)
+        layout.oled.show()
+        sleep(2)
+        exec(open("colormemory.py").read())
+        setColor()
+        show_menu(file_list)
+        
+    # This will launch RGB settings
+    if layout.button11.value() and layout.button12.value():
         layout.oled.fill_rect(0,0,layout.width,layout.height,0)
         layout.oled.text("RGB", 1, 10)
         layout.oled.show()
