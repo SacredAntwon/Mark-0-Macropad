@@ -42,7 +42,7 @@ _layout.py_: Pins for all components are assigned here, along with HID support.
 
 _rgb.py_: Enter the RGB selection menu by pressing `Top Left, Middle Left`. Select the color from the menu and it will be saved.
 
-_Test.py_: Allows for users to test the components and HID for the device. Enter it by pressing `Top Left, Middle Right, Bottom Left` buttons at the same time.
+_Test.py_: Allows for users to test the components and HID for the device. Enter it by pressing `Top Left, Bottom Right` buttons at the same time.
 
 _colormemory.py_: Color memory game that will get flash colors in a certain order, and the user is required to repeat the order by selecting the colors. Enter Colormemory by pressing `Bottom Left, Bottom Right`. `Back` will remove the last character entered and it is done by pressing `Bottom Right`. To confirm the order you created, select `Confirm` by pressing `Bottom Right`.
 
