@@ -19,8 +19,6 @@ with open('JSONFiles/colors.json', 'r') as f:
     colors = json.load(f)
 
 # Function for writing to save.json
-
-
 def jsonSave(key, value):
     saveJson = open("JSONFiles/save.json", "r")
     jsonObject = json.load(saveJson)
@@ -33,8 +31,6 @@ def jsonSave(key, value):
     saveJson.close()
 
 # Function to display and save color
-
-
 def led(pageList, page, button):
     selectedColor = pageList[page][button]
     led = WS2812(12, 1, 10)
@@ -43,8 +39,6 @@ def led(pageList, page, button):
     jsonSave("lastColor", selectedColor)
 
 # Function for displaying elements
-
-
 def screen(page, allPages):
     layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
     layout.oled.text(allPages[page][0], 1, 1)

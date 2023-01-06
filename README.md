@@ -50,7 +50,7 @@ _Tip:_ Use `Thonny` if you need/want to modify any of the files. If you are unab
 
 _main.py:_ This is the main file that will run on boot.
 
-_macropad.py:_ This is the program that will display an interactive menu to select different programs and categories. Option are selected by highlighting an item and clicking the rotary encoder. There is also an option to lower or higher the volume of the system it is connected to by holding `Top Right` button and turning the rotary encoder.
+_macropad.py:_ This is the program that will display an interactive menu to select different programs and categories. Option are selected by highlighting an item and clicking the rotary encoder. There is also an option to lower or higher the volume of the system it is connected to by holding `Top Left` button and turning the rotary encoder.
 
 _logo.py:_ This will display the logo.
 

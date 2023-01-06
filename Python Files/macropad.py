@@ -34,7 +34,7 @@ layout.oled.init_display()
 previousValue = True
 buttonDown = False
 
-
+# Function to set the color for the rgb led
 def setColor():
     global colorCode
     # Get the save data for last set color
@@ -66,8 +66,6 @@ def convertKey(keyString):
     return itemList
 
 # Function for determining what type of macro to use
-
-
 def macroType(listCateg, pageList, page, button):
     itemString = listCateg[pageList[page][button]]['keys']
     itemList = convertKey(itemString)
@@ -89,8 +87,6 @@ def macroType(listCateg, pageList, page, button):
     sleep(itemSleep)
 
 # Function for displaying screen in a macro category
-
-
 def screen(page, allPages):
     layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
     layout.oled.text(allPages[page][0], 1, 1)
@@ -102,8 +98,6 @@ def screen(page, allPages):
     layout.oled.show()
 
 # Function will run when a category is selected
-
-
 def running(categ):
     previousVal = True
     buttonBoun = True
@@ -291,6 +285,7 @@ showMenu(fileList)
 
 # Repeat forever
 while True:
+    # Control audio in main menu with top left button
     while layout.button11.value():
         if previousValue != layout.stepPin.value():
             if layout.stepPin.value() == False:

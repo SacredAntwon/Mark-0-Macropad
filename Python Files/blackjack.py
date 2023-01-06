@@ -24,8 +24,6 @@ layout.oled.show()
 buttonBounce = True
 
 # This function will save information to save.json
-
-
 def jsonSave(key, value):
     saveJson = open("JSONFiles/save.json", "r")
     jsonObject = json.load(saveJson)
@@ -38,8 +36,6 @@ def jsonSave(key, value):
     saveJson.close()
 
 # Function for updating the screen
-
-
 def updateScreen(text, line):
     if line == 1:
         layout.oled.fill_rect(1, 1, layout.width, 10, 0)
@@ -53,8 +49,6 @@ def updateScreen(text, line):
     layout.oled.show()
 
 # Function for making a bet
-
-
 def betAmountFunc(balance):
     layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
     layout.oled.show()
@@ -97,8 +91,6 @@ def betAmountFunc(balance):
     return bet
 
 # Function for creating deck of cards
-
-
 def cards():
     Card = namedtuple("Card", ["rank", "suit"])
     ranks = ["Ace"] + [str(x) for x in range(2, 11)] + \
@@ -115,8 +107,6 @@ def cards():
     return fullDeck
 
 # Function for returning the number value of cards
-
-
 def valueCard(currentCard):
     if currentCard == "Ace" or "King" or "Queen" or "Jack":
         return {"Ace": 11, "King": 10, "Queen": 10, "Jack": 10}.get(
@@ -124,8 +114,6 @@ def valueCard(currentCard):
         )
 
 # Function to get the total value of cards
-
-
 def getTotal(cards):
     total = 0
     numberOfAces = 0
@@ -143,17 +131,13 @@ def getTotal(cards):
     return total
 
 # Function to create a string for a card
-
-
 def createCardString(cards):
     cardString = cards[0][0] + ":"
     for i in reversed(range(1, len(cards))):
         cardString += " " + cards[i].rank[0] + cards[i].suit[0]
     return cardString
 
-# Main Game
-
-
+# Main game function
 def game():
     # Initializing variables
     global balance

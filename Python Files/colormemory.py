@@ -37,8 +37,6 @@ with open('JSONFiles/colors.json', 'r') as f:
     colors = json.load(f)
 
 # Function for saving information
-
-
 def jsonSave(key, value):
     saveJson = open("JSONFiles/save.json", "r")
     jsonObject = json.load(saveJson)
@@ -51,16 +49,12 @@ def jsonSave(key, value):
     saveJson.close()
 
 # Function for showing color
-
-
 def randomColor(color):
     led = WS2812(12, 1)
     led.pixels_fill(colors[color])
     led.pixels_show()
 
 # Function for screen
-
-
 def screen(page, allPages):
     layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
     layout.oled.text(allPages[page][0], 1, 1)
@@ -71,9 +65,7 @@ def screen(page, allPages):
     layout.oled.text(allPages[page][5], 60, 21)
     layout.oled.show()
 
-# Main game
-
-
+# Main game function
 def game(memorize, rounds):
     generColorList = []
     global highestScore

@@ -16,8 +16,6 @@ allPages = [pageOne, pageTwo]
 layout.oled.init_display()
 
 # Function for displaying elements
-
-
 def screen(page):
     layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
     layout.oled.text(allPages[page][0], 1, 1)
