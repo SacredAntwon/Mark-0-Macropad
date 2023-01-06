@@ -1,5 +1,5 @@
 # Mark-0-Macropad
-![Mark0](Images/macrodark.png){:height="36px" width="36px"}
+![Mark0](Images/macrodark.png =250x250)
 
 ## Parts List
 _Microcontroller:_ Seeed Studio XIAO RP2040
