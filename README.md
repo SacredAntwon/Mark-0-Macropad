@@ -70,7 +70,7 @@ All of these files are located in `Python Files`.
 
 \*_blackjack.py:_ Enter blackjack by selecting `Blackjack` on the screen using the rotary encoder. Once you see `Play` press `Top Left` button. In the bet screen, use `Top Left` button to set increment to $10 or `Top Right` button to set increment to $100. Use rotary encoder and spin either right to increase bet or left to decrease bet. To `Confirm` bet, press `Bottom Left` button. `YTtl` is the total of your cards, and `DTtl` is the dealers total. To `Hit` press `Bottom Left` button and to `Stand` press `Bottom Right` button. $10000 will be added to the balance if a balance of $0 is reached.
 
-\*_JSONFiles/save.json:_ This is where the balance in `Blackjack.py`, last selected color for the RGB light, and the high score for `colormemory.py` is stored so it will always be saved.
+\*_JSONFiles/save.json:_ This is where the balance in `blackjack.py`, last selected color for the RGB light, and the high score for `colormemory.py` is stored so it will always be saved.
 
 \*_JSONFiles/color.json:_ This is where the color and their color codes are stored to be used for the RGB light. This could be modified to add more colors.
 
@@ -84,6 +84,6 @@ There are three types which are `separate`, `together` and `control`. The `separ
 
 The `wait` element is to let macro pad know how long to wait after a macro is selected to prevent the same macro from being selected inside the time frame. The time is in seconds.
 
-The final option is `keys` and is what keys to be sent. The individual keys are separated by capitalization, so if we have _ABCOneBackspaceF2_, it would separate it as _A B C One Backspace F2_ and then type out _a b c 1_ and the press _Backspace_ and _F2_. All the names of the keys could be found in `keycode.py` and be used to make a macro.
+The final option is `keys` and this is what keys get sent to the system. The individual keys are separated by capitalization, so if we have _ABCOneBackspaceF2_, it would separate it as _A B C One Backspace F2_ and then type out _a b c 1_ and the press _Backspace_ and _F2_. All the names of the keys could be found in `keycode.py` and be used to make a macro.
 
 There are many examples already made in `JSONFiles/macros.json` to get an idea of the layout.
