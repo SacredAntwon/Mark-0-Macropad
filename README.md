@@ -53,11 +53,11 @@ _rgb.py_: Enter the RGB selection menu by pressing `Top Left, Middle Left`. Sele
 
 _Test.py_: Allows for users to test the components and HID for the device. Enter it by pressing `Top Left, Bottom Right` buttons at the same time.
 
-_colormemory.py_: Color memory game that will get flash colors in a certain order, and the user is required to repeat the order by selecting the colors. Enter Colormemory by pressing `Bottom Left, Bottom Right`. `Back` will remove the last character entered and it is done by pressing `Bottom Right`. To confirm the order you created, select `Confirm` by pressing `Bottom Right`.
+_colormemory.py_: Color memory game that will get flash colors in a certain order, and the user is required to repeat the order by selecting the colors. Enter Colormemory by selecting `Colormemory` on the screen using the rotary encoder. `Back` will remove the last character entered and it is done by pressing `Bottom Right`. To confirm the order you created, select `Confirm` by pressing `Bottom Right`.
 
-_etch.py_: Etch is a way to draw on the device. Enter etch by pressing `Top Left, Middle Right` buttons at the same time. `Rotate` is the `Top Left` button, `Invert` colors is the `Top Right` button, `Clear` screen is `Middle Left` button, and `PC Draw` is `Middle Right` button. `PC Draw` will move the cursor on your screen along the same trace you drew on the device.
+_etch.py_: Etch is a way to draw on the device. Enter etch by selecting `Etch` on the screen using the rotary encoder. `Rotate` is the `Top Left` button, `Invert` colors is the `Top Right` button, `Clear` screen is `Middle Left` button, and `PC Draw` is `Middle Right` button. `PC Draw` will move the cursor on your screen along the same trace you drew on the device.
 
-_Blackjack.py_: Enter blackjack by pressing `Middle Left, Middle Right` buttons at the same time. Once you see `Play` press `Top Left` button. In the bet screen, use `Top Left` button to set increment to $10 or `Top Right` button to set increment to $100. Use rotary encoder and spin either right to increase bet or left to decrease bet. To `Confirm` bet, press `Bottom Left` button. `YTtl` is the total of your cards, and `DTtl` is the dealers total. To `Hit` press `Bottom Left` button and to `Stand` press `Bottom Right` button. $10000 will be added to the balance if a balance of $0 is reached.
+_Blackjack.py_: Enter blackjack by selecting `Blackjack` on the screen using the rotary encoder. Once you see `Play` press `Top Left` button. In the bet screen, use `Top Left` button to set increment to $10 or `Top Right` button to set increment to $100. Use rotary encoder and spin either right to increase bet or left to decrease bet. To `Confirm` bet, press `Bottom Left` button. `YTtl` is the total of your cards, and `DTtl` is the dealers total. To `Hit` press `Bottom Left` button and to `Stand` press `Bottom Right` button. $10000 will be added to the balance if a balance of $0 is reached.
 
 _JSONFiles/save.json_: This is where the balance in `Blackjack.py`, last selected color for the RGB light, and the highscore for `colormemory.py` is stored so it will always be saved.
 
@@ -66,3 +66,12 @@ _JSONFiles/color.json_: This is where the color and their color codes are stored
 _JSONFiles/macros.json_: The dictionary for the macros are stored here. This is where more macros are added.
 
 ## How-To Add Macros
+The macros are stored in `JSONFiles/macros.json` and are editable. This is stored in a dictionary layout where items in the first indent are the categories, which are usually broad and are the items that are displayed in the main screen. The items in the next indent are the individual macros for that category. The first element will be the name of that macro. The name then contains three essential items which are the `type`, `wait` and `keys`.
+
+There are three types which are `seperate`, `together` and `control`. The `seperate` type is when you want to press and release each individual key as it goes through the list of keys. With `together`, it will press all keys and release them at the same time. The final is `control` and this is for using consumer control elements such as play and pause.
+
+The `wait` element is to let macro pad know how long to wait after a macro is selected to prevent the same macro from being selected inside the time frame. The time is in seconds.
+
+The final option is `keys` and is what keys to be sent. The individual keys are seperated by capitalization, so if we have _ABCOneBackspaceF2_, it would seperate it as _A B C One Backspace F2_ and then type out _a b c 1_ and the press _Backspace_ and _F2_. All the names of the keys could be found in `keycode.py` and be used to make a macro.
+
+There are many examples already made in `JSONFiles/macros.json` to get an idea of the layout.
