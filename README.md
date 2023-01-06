@@ -84,6 +84,6 @@ There are three types which are `separate`, `together` and `control`. The `separ
 
 The `wait` element is to let macro pad know how long to wait after a macro is selected to prevent the same macro from being selected inside the time frame. The time is in seconds.
 
-The final option is `keys` and this is what keys get sent to the system. The individual keys are separated by capitalization, so if we have _ABCOneBackspaceF2_, it would separate it as _A B C One Backspace F2_ and then type out _a b c 1_ and the press _Backspace_ and _F2_. All the names of the keys could be found in `keycode.py` and be used to make a macro.
+The final option is `keys` and this is what keys get sent to the system. The individual keys are separated by capitalization, so if we have _ABCOneBackspaceF2_, it would separate it as _A B C One Backspace F2_ and then type out _a b c 1_ press _Backspace_, _F2_. All the names of the keys could be found in `keycode.py` and be used to make a macro.
 
 There are many examples already made in `JSONFiles/macros.json` to get an idea of the layout.
