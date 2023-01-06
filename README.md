@@ -44,37 +44,37 @@ _Step 8:_ You could check if the files uploaded successfully by running `main-1.
 
 _Step 9:_ If no files need to be modified, rename `main-1.py` to `main.py`. Thonny has no option to rename, so rename it on your system and replace the `main-1.py` with `main.py`. This will allow it to boot `main.py` if the device restarts and will not need `Thonny` to run it again.
 
-_Tip:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, you will need to upload a firmware that will rename `main.py` back to `main-1.py`. Here is the link to download a file named [`MicroPython_RenameMainDotPy`](https://forums.raspberrypi.com/download/file.php?id=45227&sid=cec97039a4f7ce336c4e816c979cb3d3). Follow the steps from the 'Uploading Firmware' section to upload `MicroPython_RenameMainDotPy.uf2` firmware. After it is done, upload `Firmware.uf2`, which is located in the `firmware` folder, once again.
+_Tip:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, you will need to upload a firmware that will rename `main.py` back to `main-1.py`. Here is the link to download a file named [`MicroPython_RenameMainDotPy`](https://forums.raspberrypi.com/download/file.php?id=45227&sid=cec97039a4f7ce336c4e816c979cb3d3). Follow the steps from the 'Uploading Firmware' section to upload `MicroPython_RenameMainDotPy.uf2` firmware. After it is done, upload `firmware.uf2`, which is located in the `Firmware` folder, once again.
 
 ## Files
 
 All of these files are located in `Python Files`.
 
-_main.py:_ This is the main file that will run on boot.
+\*_main.py:_ This is the main file that will run on boot.
 
-_macropad.py:_ This is the program that will display an interactive menu to select different programs and categories. Option are selected by highlighting an item and clicking the rotary encoder. There is also an option to lower or higher the volume of the system it is connected to by holding `Top Left` button and turning the rotary encoder.
+\*_macropad.py:_ This is the program that will display an interactive menu to select different programs and categories. Option are selected by highlighting an item and clicking the rotary encoder. There is also an option to lower or higher the volume of the system it is connected to by holding `Top Left` button and turning the rotary encoder.
 
-_logo.py:_ This will display the logo.
+\*_logo.py:_ This will display the logo.
 
-_keycode.py:_ This will hold all HID Keycodes.
+\*_keycode.py:_ This will hold all HID Keycodes.
 
-_layout.py:_ Pins for all components are assigned here, along with HID support.
+\*_layout.py:_ Pins for all components are assigned here, along with HID support.
 
-_rgb.py:_ Enter the RGB selection menu by selecting `RGB` on the screen using the rotary encoder. Select the color from the menu to be shown and it will be saved to `JSONFiles/save.json`.
+\*_rgb.py:_ Enter the RGB selection menu by selecting `RGB` on the screen using the rotary encoder. Select the color from the menu to be shown and it will be saved to `JSONFiles/save.json`.
 
-_test.py:_ Allows for users to test the components and HID for the device. Enter it by pressing `Middle Left, Middle Right` buttons at the same time.
+\*_test.py:_ Allows for users to test the components and HID for the device. Enter it by pressing `Middle Left, Middle Right` buttons at the same time.
 
-_colormemory.py:_ Color memory game that will get flash colors in a certain order, and the user is required to repeat the order by selecting the colors. Enter Colormemory by selecting `Colormemory` on the screen using the rotary encoder. `Back` will remove the last character entered and it is done by pressing `Bottom Right`. To confirm the order you created, select `Confirm` by pressing `Bottom Right`.
+\*_colormemory.py:_ Color memory game that will get flash colors in a certain order, and the user is required to repeat the order by selecting the colors. Enter Colormemory by selecting `Colormemory` on the screen using the rotary encoder. `Back` will remove the last character entered and it is done by pressing `Bottom Right`. To confirm the order you created, select `Confirm` by pressing `Bottom Right`.
 
-_etch.py:_ Etch is a way to draw on the device. Enter etch by selecting `Etch` on the screen using the rotary encoder. `Rotate` is the `Top Left` button, `Invert` colors is the `Top Right` button, `Clear` screen is `Middle Left` button, and `PC Draw` is `Middle Right` button. `PC Draw` will move the cursor on your screen along the same trace you drew on the device.
+\*_etch.py:_ Etch is a way to draw on the device. Enter etch by selecting `Etch` on the screen using the rotary encoder. `Rotate` is the `Top Left` button, `Invert` colors is the `Top Right` button, `Clear` screen is `Middle Left` button, and `PC Draw` is `Middle Right` button. `PC Draw` will move the cursor on your screen along the same trace you drew on the device.
 
-_blackjack.py:_ Enter blackjack by selecting `Blackjack` on the screen using the rotary encoder. Once you see `Play` press `Top Left` button. In the bet screen, use `Top Left` button to set increment to $10 or `Top Right` button to set increment to $100. Use rotary encoder and spin either right to increase bet or left to decrease bet. To `Confirm` bet, press `Bottom Left` button. `YTtl` is the total of your cards, and `DTtl` is the dealers total. To `Hit` press `Bottom Left` button and to `Stand` press `Bottom Right` button. $10000 will be added to the balance if a balance of $0 is reached.
+\*_blackjack.py:_ Enter blackjack by selecting `Blackjack` on the screen using the rotary encoder. Once you see `Play` press `Top Left` button. In the bet screen, use `Top Left` button to set increment to $10 or `Top Right` button to set increment to $100. Use rotary encoder and spin either right to increase bet or left to decrease bet. To `Confirm` bet, press `Bottom Left` button. `YTtl` is the total of your cards, and `DTtl` is the dealers total. To `Hit` press `Bottom Left` button and to `Stand` press `Bottom Right` button. $10000 will be added to the balance if a balance of $0 is reached.
 
-_JSONFiles/save.json:_ This is where the balance in `Blackjack.py`, last selected color for the RGB light, and the high score for `colormemory.py` is stored so it will always be saved.
+\*_JSONFiles/save.json:_ This is where the balance in `Blackjack.py`, last selected color for the RGB light, and the high score for `colormemory.py` is stored so it will always be saved.
 
-_JSONFiles/color.json:_ This is where the color and their color codes are stored to be used for the RGB light. This could be modified to add more colors.
+\*_JSONFiles/color.json:_ This is where the color and their color codes are stored to be used for the RGB light. This could be modified to add more colors.
 
-_JSONFiles/macros.json:_ The dictionary for the macros are stored here. This is where more macros are added.
+\*_JSONFiles/macros.json:_ The dictionary for the macros are stored here. This is where more macros are added.
 
 ## How-To Add Macros
 
