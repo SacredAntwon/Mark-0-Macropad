@@ -2,6 +2,15 @@
 
 
 ## Parts List
+_Microcontroller:_ Seeed Studio XIAO RP2040
+
+_Screen:_ SSD1306 OLED 128x32
+
+_Rotary Encoder:_ CYT1100
+
+_Buttons x 6:_ 6x6x4.3mm 4 Pin Micro SMD
+
+_Custom PCB_
 
 ## Uploading Firmware
 _Step 1:_ With the device disconnected from the computer, hold the boot button located on the bottom of the board.
