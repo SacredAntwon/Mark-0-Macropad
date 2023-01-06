@@ -1,5 +1,5 @@
 # Mark-0-Macropad
-![Mark0](Images/macrodark.HEIC)
+![Mark0](Images/macrodark.png)
 
 ## Parts List
 _Microcontroller:_ Seeed Studio XIAO RP2040
