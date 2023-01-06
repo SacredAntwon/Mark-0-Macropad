@@ -1,3 +1,7 @@
+# Author: SacredAntwon
+# Purpose: Basic board information such as
+# pins and screen size.
+
 from machine import Pin, I2C
 from ssd1306 import SSD1306_I2C
 import machine
@@ -23,9 +27,9 @@ i2c = I2C(id=id, scl=scl, sda=sda)
 oled = SSD1306_I2C(width=128, height=32, i2c=i2c)
 
 # Rotary encoder pins
-button_pin = Pin(27, Pin.IN, Pin.PULL_UP)
-direction_pin = Pin(26, Pin.IN, Pin.PULL_UP)
-step_pin  = Pin(28, Pin.IN, Pin.PULL_UP)
+buttonPin = Pin(27, Pin.IN, Pin.PULL_UP)
+directionPin = Pin(26, Pin.IN, Pin.PULL_UP)
+stepPin = Pin(28, Pin.IN, Pin.PULL_UP)
 
 # Button pins
 button11 = Pin(3, Pin.IN, Pin.PULL_DOWN)

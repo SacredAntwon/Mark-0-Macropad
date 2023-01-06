@@ -1,3 +1,7 @@
+# Author: SacredAntwon
+# Purpose: Allows users to select a color for
+# the RGB Led.
+
 from ws2812 import WS2812
 import machine
 from time import sleep
@@ -5,13 +9,18 @@ import layout
 import math
 import json
 
-power = machine.Pin(11,machine.Pin.OUT)
+# Initialize pins for led
+power = machine.Pin(11, machine.Pin.OUT)
 power.value(1)
 layout.oled.init_display()
 
+# Load colors file from colors.json
 with open('JSONFiles/colors.json', 'r') as f:
-  colors = json.load(f)
-  
+    colors = json.load(f)
+
+# Function for writing to save.json
+
+
 def jsonSave(key, value):
     saveJson = open("JSONFiles/save.json", "r")
     jsonObject = json.load(saveJson)
@@ -23,39 +32,46 @@ def jsonSave(key, value):
     json.dump(jsonObject, saveJson)
     saveJson.close()
 
+# Function to display and save color
+
+
 def led(pageList, page, button):
     selectedColor = pageList[page][button]
-    led = WS2812(12,1)
+    led = WS2812(12, 1, 10)
     led.pixels_fill(colors[selectedColor])
     led.pixels_show()
     jsonSave("lastColor", selectedColor)
-    
-def screen(page, all_pages):
-    layout.oled.fill_rect(0,0,layout.width,layout.height,0)
-    layout.oled.text(all_pages[page][0],1,1)
-    layout.oled.text(all_pages[page][1],60,1)
-    layout.oled.text(all_pages[page][2],1,11)
-    layout.oled.text(all_pages[page][3],60,11)
-    layout.oled.text(all_pages[page][4],1,21)
-    layout.oled.text(all_pages[page][5],60,21)
+
+# Function for displaying elements
+
+
+def screen(page, allPages):
+    layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
+    layout.oled.text(allPages[page][0], 1, 1)
+    layout.oled.text(allPages[page][1], 60, 1)
+    layout.oled.text(allPages[page][2], 1, 11)
+    layout.oled.text(allPages[page][3], 60, 11)
+    layout.oled.text(allPages[page][4], 1, 21)
+    layout.oled.text(allPages[page][5], 60, 21)
     layout.oled.show()
 
-previous_value = True
-button_bounce = True
+
+previousValue = True
+buttonBounce = True
 
 # Modify the container name for an empty section
 empty = ""
-#List the macros
+# List the macros
 listKeys = list(colors.keys())
 page = 0
 
 # Finding the number of pages in a category
-total_page = math.ceil(len(listKeys)/6)
+totalPage = math.ceil(len(listKeys)/6)
 
 # Seperating a category of macros into pages
 count = 0
 pageList = []
-for i in range(total_page):
+for i in range(totalPage):
     nestList = []
     for j in range(6):
         if count < len(listKeys):
@@ -67,24 +83,24 @@ for i in range(total_page):
 
 screen(0, pageList)
 
-while button_bounce:
-    if previous_value != layout.step_pin.value():
-        if layout.step_pin.value() == False:
+while buttonBounce:
+    if previousValue != layout.stepPin.value():
+        if layout.stepPin.value() == False:
 
             # Turned Left
-            if layout.direction_pin.value() == False:
+            if layout.directionPin.value() == False:
                 if page > 0:
                     page -= 1
 
             # Turned Right
             else:
-                if page < total_page - 1:
+                if page < totalPage - 1:
                     page += 1
-            
+
             screen(page, pageList)
 
-        previous_value = layout.step_pin.value()
-        
+        previousValue = layout.stepPin.value()
+
     if layout.button11.value():
         if pageList[page][0] != empty:
             led(pageList, page, 0)
@@ -109,12 +125,12 @@ while button_bounce:
         if pageList[page][5] != empty:
             led(pageList, page, 5)
         sleep(.5)
-        
-    if layout.button_pin.value() == False:
-        layout.oled.fill_rect(0,0,layout.width,layout.height,0)
+
+    # Go back to main menu
+    if layout.buttonPin.value() == False:
+        layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
         layout.oled.text("Going Back", 1, 10)
         layout.oled.text("To Menu", 1, 21)
         layout.oled.show()
         sleep(1)
-        button_bounce = False
-
+        buttonBounce = False

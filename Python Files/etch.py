@@ -1,40 +1,45 @@
+# Author: SacredAntwon
+# Purpose: Drawing using the rotary encoder.
+
 from time import sleep
 import layout
 
-previous_value = True
-direction_etch = True
+# Initialize variables
+previousValue = True
+directionEtch = True
 
 invert = 0
 
-etch_x = 0
-etch_y = 0
+etchX = 0
+etchY = 0
 
 drawList = []
 elementList = []
-button_bounce = True
+buttonBounce = True
 
-layout.oled.fill_rect(0,0,layout.width,layout.height,0)
+# Clear screen
+layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
 layout.oled.show()
 
-while button_bounce:
+while buttonBounce:
     # Switch Directions
     if layout.button11.value():
-        direction_etch = not direction_etch
+        directionEtch = not directionEtch
         sleep(.25)
-    
+
     # Invert Colors
     if layout.button21.value():
         invert = not invert
         layout.oled.invert(invert)
         sleep(.25)
-    
+
     # Clear Screen
     if layout.button12.value():
-        layout.oled.fill_rect(0,0,layout.width,layout.height,0)
+        layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
         layout.oled.show()
         drawList = []
         sleep(.25)
-    
+
     # Draw on PC
     if layout.button22.value():
         layout.m.press(layout.m.BUTTON_LEFT)
@@ -42,53 +47,52 @@ while button_bounce:
             layout.m.move(position[0], position[1])
         layout.m.release(layout.m.BUTTON_LEFT)
         sleep(.25)
-        
-    if previous_value != layout.step_pin.value():
-        if layout.step_pin.value() == False:
 
-            # Turned Left
-            if layout.direction_pin.value() == False:
-                if direction_etch: 
-                    if etch_x > 0:
-                        #print("L")
-                        etch_x -= 1
+    if previousValue != layout.stepPin.value():
+        if layout.stepPin.value() == False:
+
+            # Turned rotary encoder left
+            if layout.directionPin.value() == False:
+                if directionEtch:
+                    # Draw left
+                    if etchX > 0:
+                        etchX -= 1
                         elementList = [-5, 0]
                         drawList.append(elementList)
                 else:
-                    if etch_y < 31:
-                        #print("D")
-                        etch_y += 1
+                    # Draw down
+                    if etchY < 31:
+                        etchY += 1
                         elementList = [0, 5]
                         drawList.append(elementList)
-                
-                
-            # Turned Right
+
+            # Turned rotary encoder right
             else:
-                if direction_etch:
-                    
-                    if etch_x < 127:
-                        #print("R")
-                        etch_x += 1
+                if directionEtch:
+                    # Draw right
+                    if etchX < 127:
+                        etchX += 1
                         elementList = [5, 0]
                         drawList.append(elementList)
                 else:
-                    
-                    if etch_y > 0:
-                        #print("U")
-                        etch_y -= 1
+                    # Draw up
+                    if etchY > 0:
+                        etchY -= 1
                         elementList = [0, -5]
                         drawList.append(elementList)
-            
-            layout.oled.pixel(etch_x, etch_y, 1)
+
+            # Display the pixel
+            layout.oled.pixel(etchX, etchY, 1)
             layout.oled.show()
 
-        previous_value = layout.step_pin.value()
-            
-    if layout.button_pin.value() == False:
-        layout.oled.fill_rect(0,0,layout.width,layout.height,0)
+        previousValue = layout.stepPin.value()
+
+    # Back to menu
+    if layout.buttonPin.value() == False:
+        layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
         layout.oled.invert(False)
         layout.oled.text("Going Back", 1, 10)
         layout.oled.text("To Menu", 1, 21)
         layout.oled.show()
         sleep(1)
-        button_bounce = False
+        buttonBounce = False

@@ -1,21 +1,21 @@
 {
 "Browser" :
    {"Netflix" :
-    {"type" : "seperate", "wait" : 1, "keys" : "F6WWWPeriodNETFLIXPeriodCOMEnter"},
+    {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodNETFLIXPeriodCOMEnter"},
    "Twitter" :
-    {"type" : "seperate", "wait" : 1, "keys" : "F6WWWPeriodTWITTERPeriodCOMEnter"},
+    {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodTWITTERPeriodCOMEnter"},
    "YouTube" :
-    {"type" : "seperate", "wait" : 1, "keys" : "F6WWWPeriodYOUTUBEPeriodCOMEnter"},
+    {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodYOUTUBEPeriodCOMEnter"},
    "Google" :
-    {"type" : "seperate", "wait" : 1, "keys" : "F6WWWPeriodGOOGLEPeriodCOMEnter"},
+    {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodGOOGLEPeriodCOMEnter"},
    "Amazon" :
-    {"type" : "seperate", "wait" : 1, "keys" : "F6WWWPeriodAMAZONPeriodCOMEnter"},
+    {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodAMAZONPeriodCOMEnter"},
    "Reddit" :
-    {"type" : "seperate", "wait" : 1, "keys" : "F6WWWPeriodREDDITPeriodCOMEnter"},
+    {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodREDDITPeriodCOMEnter"},
    "Spotify" :
-    {"type" : "seperate", "wait" : 1, "keys" : "F6WWWPeriodSPOTIFYPeriodCOMEnter"},
+    {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodSPOTIFYPeriodCOMEnter"},
    "Hulu" :
-    {"type" : "seperate", "wait" : 1, "keys" : "F6WWWPeriodHULUPeriodCOMEnter"}
+    {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodHULUPeriodCOMEnter"}
    },
    
 "Basic" :
@@ -35,13 +35,13 @@
   
 "Programs" :
    {"Chrome" :
-    {"type" : "seperate", "wait" : 1, "keys" : "LeftguiCHROMEEnter"},
+    {"type" : "separate", "wait" : 1, "keys" : "LeftguiCHROMEEnter"},
    "Steam" :
-    {"type" : "seperate", "wait" : 1, "keys" : "LeftguiSTEAMEnter"},
+    {"type" : "separate", "wait" : 1, "keys" : "LeftguiSTEAMEnter"},
    "Discord" :
-    {"type" : "seperate", "wait" : 1, "keys" : "LeftguiDISCORDEnter"},
+    {"type" : "separate", "wait" : 1, "keys" : "LeftguiDISCORDEnter"},
    "Spotify" :
-    {"type" : "seperate", "wait" : 1, "keys" : "LeftguiSPORTIFYEnter"}
+    {"type" : "separate", "wait" : 1, "keys" : "LeftguiSPORTIFYEnter"}
    },
     
 "Audio" :
@@ -57,16 +57,16 @@
           
 "CSGO" :
   {"Rifle" :
-   {"type" : "seperate", "wait" : 10, "keys" : "GraveaccentBUYSpaceAKFourSevenEnterGraveaccent"},
+   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceAKFourSevenEnterGraveaccent"},
   "VesHel" :
-   {"type" : "seperate", "wait" : 10, "keys" : "GraveaccentBUYSpaceVESTHELMEnterGraveaccent"},
+   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceVESTHELMEnterGraveaccent"},
   "Defuser" :
-   {"type" : "seperate", "wait" : 10, "keys" : "GraveaccentBUYSpaceDEFUSERnterGraveaccent"},
+   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceDEFUSERnterGraveaccent"},
   "SmoFlsh" :
-   {"type" : "seperate", "wait" : 10, "keys" : "GraveaccentBUYSpaceSMOKEGRENADESemicolonBUYSpaceFLASHBANGEnterGraveaccent"},
+   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceSMOKEGRENADESemicolonBUYSpaceFLASHBANGEnterGraveaccent"},
   "NadeMol" :
-   {"type" : "seperate", "wait" : 10, "keys" : "GraveaccentBUYSpaceHEGRENADESemicolonBUYSpaceMOLOTOVEnterGraveaccent"},
+   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceHEGRENADESemicolonBUYSpaceMOLOTOVEnterGraveaccent"},
   "AWP" :
-   {"type" : "seperate", "wait" : 10, "keys" : "GraveaccentBUYSpaceAWPEnterGraveaccent"}
+   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceAWPEnterGraveaccent"}
   }
 }
