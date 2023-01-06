@@ -40,7 +40,7 @@ _Step 8:_ You could check if the files uploaded succesfully by running `maintest
 
 _Step 9:_ If no files need to be modified, rename `maintest.py` to `main.py`. This will allow it to boot `main.py` if the device restarts and will not need `Thonny` to run it again.
 
-_Tip:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, you will need to upload a firmware that will rename `main.py` back to `main-1.py`. Here is the link to [`download`](https://forums.raspberrypi.com/download/file.php?id=45227&sid=cec97039a4f7ce336c4e816c979cb3d3) a file named `MicroPython_RenameMainDotPy`. Follow the steps from the 'Uploading Firmware' section to upload `MicroPython_RenameMainDotPy.uf2` firmware. After it is done, upload `firmware.uf2`, which is located in the `firmware` folder, once again.
+_Tip:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, you will need to upload a firmware that will rename `main.py` back to `main-1.py`. Here is the link to download a file named [`MicroPython_RenameMainDotPy`](https://forums.raspberrypi.com/download/file.php?id=45227&sid=cec97039a4f7ce336c4e816c979cb3d3). Follow the steps from the 'Uploading Firmware' section to upload `MicroPython_RenameMainDotPy.uf2` firmware. After it is done, upload `firmware.uf2`, which is located in the `firmware` folder, once again.
 
 ## Files
 _main.py_: This is the main file that will run on boot.
@@ -49,7 +49,7 @@ _keycode.py_: This will hold all HID Keycodes.
 
 _layout.py_: Pins for all components are assigned here, along with HID support.
 
-_rgb.py_: Enter the RGB selection menu by pressing `Top Left, Middle Left`. Select the color from the menu and it will be saved.
+_rgb.py_: Enter the RGB selection menu by selecting `RGB` on the screen using the rotary encoder. Select the color from the menu to be shown and it will be saved to `JSONFiles/save.json`.
 
 _Test.py_: Allows for users to test the components and HID for the device. Enter it by pressing `Top Left, Bottom Right` buttons at the same time.
 
@@ -61,7 +61,7 @@ _Blackjack.py_: Enter blackjack by selecting `Blackjack` on the screen using the
 
 _JSONFiles/save.json_: This is where the balance in `Blackjack.py`, last selected color for the RGB light, and the highscore for `colormemory.py` is stored so it will always be saved.
 
-_JSONFiles/color.json_: This is where the color and their color codes are stored to be used for the RGB light.
+_JSONFiles/color.json_: This is where the color and their color codes are stored to be used for the RGB light. This could be modified to add more colors.
 
 _JSONFiles/macros.json_: The dictionary for the macros are stored here. This is where more macros are added.
 
