@@ -13,7 +13,7 @@ _Buttons x 6:_ 6x6x4.3mm 4 Pin Micro SMD
 _Custom PCB_
 
 ## Uploading Firmware
-_Step 1:_ With the device disconnected from the computer, hold the boot button located on the bottom of the board.
+_Step 1:_ With the device disconnected from the computer, hold the button labeled `boot` located on the bottom of the microcontroller which is below the macropad.
 
 _Step 2:_ While holding the boot button on the device, plug it into the computer and let go of the boot button.
 
