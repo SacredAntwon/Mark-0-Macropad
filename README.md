@@ -42,11 +42,13 @@ _Step 7:_ Select all files in the `Python Files` folder and right click on it. S
 
 _Step 8:_ You could check if the files uploaded successfully by running `main-1.py`, which is a temporary name. To run it press the `Green Play Button` on the top of your screen. This is a good time to modify or add any of the files, including the macros.
 
-_Step 9:_ If no files need to be modified, rename `main-1.py` to `main.py`. Thonny has no option to rename, so rename it on your system, and replace the `main-1.py` with `main.py`. This will allow it to boot `main.py` if the device restarts and will not need `Thonny` to run it again.
+_Step 9:_ If no files need to be modified, rename `main-1.py` to `main.py`. Thonny has no option to rename, so rename it on your system and replace the `main-1.py` with `main.py`. This will allow it to boot `main.py` if the device restarts and will not need `Thonny` to run it again.
 
-_Tip:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, you will need to upload a firmware that will rename `main.py` back to `main-1.py`. Here is the link to download a file named [`MicroPython_RenameMainDotPy`](https://forums.raspberrypi.com/download/file.php?id=45227&sid=cec97039a4f7ce336c4e816c979cb3d3). Follow the steps from the 'Uploading Firmware' section to upload `MicroPython_RenameMainDotPy.uf2` firmware. After it is done, upload `firmware.uf2`, which is located in the `firmware` folder, once again.
+_Tip:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, you will need to upload a firmware that will rename `main.py` back to `main-1.py`. Here is the link to download a file named [`MicroPython_RenameMainDotPy`](https://forums.raspberrypi.com/download/file.php?id=45227&sid=cec97039a4f7ce336c4e816c979cb3d3). Follow the steps from the 'Uploading Firmware' section to upload `MicroPython_RenameMainDotPy.uf2` firmware. After it is done, upload `Firmware.uf2`, which is located in the `firmware` folder, once again.
 
 ## Files
+
+All of these files are located in `Python Files`.
 
 _main.py:_ This is the main file that will run on boot.
 
