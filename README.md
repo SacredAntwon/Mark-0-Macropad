@@ -12,7 +12,7 @@ _Rotary Encoder:_ CYT1100
 
 _Buttons x 6:_ 6x6x4.3mm 4 Pin Micro SMD
 
-_Custom PCB_
+_Custom PCB:_ `gerber.zip` stored in `Board Design`
 
 ## Uploading Firmware
 
