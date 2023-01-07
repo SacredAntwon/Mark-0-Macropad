@@ -47,10 +47,9 @@ def setColor():
 
     power = machine.Pin(11, machine.Pin.OUT)
     power.value(1)
-    layout.oled.init_display()
 
     selectedColor = saveJson["lastColor"]
-    led = WS2812(12, 1)
+    led = WS2812(12, 1, 1)
     colorCode = colorsJson[selectedColor]
     led.pixels_fill(colorCode)
     led.pixels_show()

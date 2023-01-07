@@ -33,7 +33,7 @@ def jsonSave(key, value):
 # Function to display and save color
 def led(pageList, page, button):
     selectedColor = pageList[page][button]
-    led = WS2812(12, 1, 10)
+    led = WS2812(12, 1, 1)
     led.pixels_fill(colors[selectedColor])
     led.pixels_show()
     jsonSave("lastColor", selectedColor)

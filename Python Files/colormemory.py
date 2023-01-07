@@ -50,7 +50,7 @@ def jsonSave(key, value):
 
 # Function for showing color
 def randomColor(color):
-    led = WS2812(12, 1)
+    led = WS2812(12, 1, 1)
     led.pixels_fill(colors[color])
     led.pixels_show()
 
