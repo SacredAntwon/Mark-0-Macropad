@@ -254,7 +254,6 @@ def game():
 
     # Save information
     jsonSave("blackjackBalance", balance)
-
     sleep(2)
     layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
     layout.oled.show()

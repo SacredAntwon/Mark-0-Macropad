@@ -220,8 +220,6 @@ def showMenu(menu):
     layout.oled.show()
 
 # Launching a file
-
-
 def launch(filename):
     global fileList
     # Clear screen
@@ -238,8 +236,6 @@ def launch(filename):
     showMenu(fileList)
 
 # Function for launching files
-
-
 def program(filename):
     # Etch file
     if filename == 'Etch':
@@ -285,7 +281,8 @@ showMenu(fileList)
 
 # Repeat forever
 while True:
-    # Control audio in main menu with top left button
+    # Use to control volume in main menu using top left button
+    # and rotary encoder
     while layout.button11.value():
         if previousValue != layout.stepPin.value():
             if layout.stepPin.value() == False:
