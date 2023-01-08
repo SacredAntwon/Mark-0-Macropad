@@ -1,6 +1,6 @@
 # Mark-0-Macropad
 
-![Mark0](Images/macrodark.png)
+![Mark0](Images/mark0.gif)
 
 ## Parts List
 
