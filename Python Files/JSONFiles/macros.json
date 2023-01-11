@@ -15,7 +15,9 @@
    "Spotify" :
     {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodSPOTIFYPeriodCOMEnter"},
    "Hulu" :
-    {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodHULUPeriodCOMEnter"}
+    {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodHULUPeriodCOMEnter"},
+   "SrcCde" :
+    {"type" : "separate", "wait" : 1, "keys" : "F6WWWPeriodGITHUBPeriodCOMForwardslashSACREDANTWONForwardslashMARKDashZeroDashMACROPADEnter"}
    },
    
 "Basic" :
@@ -53,20 +55,5 @@
     {"type" : "together", "wait" : 1, "keys" : "LeftcontrolLeftshiftM"},
    "DisDeaf" :
     {"type" : "together", "wait" : 1, "keys" : "LeftcontrolLeftshiftD"}
-   },
-          
-"CSGO" :
-  {"Rifle" :
-   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceAKFourSevenEnterGraveaccent"},
-  "VesHel" :
-   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceVESTHELMEnterGraveaccent"},
-  "Defuser" :
-   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceDEFUSERnterGraveaccent"},
-  "SmoFlsh" :
-   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceSMOKEGRENADESemicolonBUYSpaceFLASHBANGEnterGraveaccent"},
-  "NadeMol" :
-   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceHEGRENADESemicolonBUYSpaceMOLOTOVEnterGraveaccent"},
-  "AWP" :
-   {"type" : "separate", "wait" : 10, "keys" : "GraveaccentBUYSpaceAWPEnterGraveaccent"}
-  }
+   }
 }
