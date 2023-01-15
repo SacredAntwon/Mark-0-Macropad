@@ -4,21 +4,29 @@
 
 from machine import Pin, I2C
 from ssd1306 import SSD1306_I2C
+from ws2812 import WS2812
 import machine
 import keyboard
 import mouse
 import consumer_control
 import json
-    
+
+# Get save information
+with open('JSONFiles/save.json', 'r') as f:
+        saveJson = json.load(f)
+        
 # HID declarations
 k = keyboard.Keyboard()
 cc = consumer_control.Consumer_Control()
 m = mouse.Mouse()
 
-# Screen setup and pins
-with open('JSONFiles/save.json', 'r') as f:
-        saveJson = json.load(f)
+# LED pins
+power = machine.Pin(11, machine.Pin.OUT)
+power.value(1)
+colorBrightness = float(saveJson['colorBrightness'])
+led = WS2812(12, 1, colorBrightness)
 
+# Screen setup and pins
 screenBrightness = saveJson['screenBrightness']
 
 width = 128

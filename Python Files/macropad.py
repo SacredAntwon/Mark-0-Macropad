@@ -2,7 +2,6 @@
 # Purpose: Runs the main menu and option selection.
 
 import layout
-from ws2812 import WS2812
 import machine
 from time import sleep
 import math
@@ -10,6 +9,7 @@ import re
 import keycode
 import json
 from collections import OrderedDict
+from ws2812 import WS2812
 
 # Get the list of categories from macros.json and display the menu
 with open('JSONFiles/macros.json', 'r') as f:
@@ -20,10 +20,10 @@ fileList = list(macroJson)
 programFiles = ['Etch', 'RGB', 'Blackjack',  'Colormemory']
 fileList += programFiles
 
-# Get the save data for last set screen brightness
-with open('JSONFiles/save.json', 'r') as f:
-    saveJson = json.load(f)
+# Get the save data for last set color brightness
+colorBrightness = float(layout.colorBrightness)
 
+# Get the save data for last set screen brightness
 screenBrightness = layout.screenBrightness
 
 # Main menu line constants
@@ -38,7 +38,7 @@ previousValue = True
 buttonDown = False
 
 # Function to set the color for the rgb led
-def setColor():
+def setColor(brightness):
     global colorCode
     # Get the save data for last set color
     with open('JSONFiles/save.json', 'r') as f:
@@ -47,12 +47,8 @@ def setColor():
     # Get color codes
     with open('JSONFiles/colors.json', 'r') as f:
         colorsJson = json.load(f)
-
-    power = machine.Pin(11, machine.Pin.OUT)
-    power.value(1)
-
+    led = WS2812(12, 1, brightness)
     selectedColor = saveJson["lastColor"]
-    led = WS2812(12, 1, 1)
     colorCode = colorsJson[selectedColor]
     led.pixels_fill(colorCode)
     led.pixels_show()
@@ -99,13 +95,22 @@ def macroType(listCateg, pageList, page, button):
     # Modify in macros.py under "wait" key
     sleep(itemSleep)
 
-# Function to display brightness percentage
+# Function to display oled brightness percentage
 def brightnessDisplay(value):
     # Clear screen
-    layout.oled.fill_rect(78, 0, layout.width, 10, 0)
+    layout.oled.fill_rect(94, 0, layout.width, 10, 0)
     layout.oled.show()
     # Display percent
-    layout.oled.text(f"{value/2}%", 80, 1)
+    layout.oled.text(f"{int(value/2)}%", 96, 1)
+    layout.oled.show()
+
+# Function to display color brightness percentage
+def brightnessColor(value):
+    # Clear screen
+    layout.oled.fill_rect(94, 0, layout.width, 10, 0)
+    layout.oled.show()
+    # Display percent
+    layout.oled.text(f"{int(value*100)}%", 96, 1)
     layout.oled.show()
     
 # Function for displaying screen in a macro category
@@ -259,6 +264,8 @@ def launch(filename):
 
 # Function for launching files
 def program(filename):
+    global colorBrightness
+    
     # Etch file
     if filename == 'Etch':
         layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
@@ -287,7 +294,7 @@ def program(filename):
         layout.oled.show()
         sleep(2)
         exec(open("colormemory.py").read())
-        setColor()
+        setColor(colorBrightness)
         showMenu(fileList)
 
     # RGB file
@@ -297,7 +304,7 @@ def program(filename):
 
 
 # Ensure correct color is set
-setColor()
+setColor(colorBrightness)
 
 showMenu(fileList)
 
@@ -340,6 +347,29 @@ while True:
             previousValue = layout.stepPin.value()
             jsonSave('screenBrightness', screenBrightness)
             
+    # Use to control color brightness in main menu using bottom right button
+    # and rotary encoder
+    while layout.button23.value():
+        if previousValue != layout.stepPin.value():
+            if layout.stepPin.value() == False:
+                
+                # Turned Left
+                if layout.directionPin.value() == False and colorBrightness > float(0):
+                    colorBrightness -= 0.1
+                    colorBrightness = round(colorBrightness, 1)
+                    setColor(colorBrightness)
+                    brightnessColor(colorBrightness)
+        
+                # Turned Right
+                elif layout.directionPin.value() and colorBrightness < float(1):
+                    colorBrightness += 0.1
+                    colorBrightness = round(colorBrightness, 1)
+                    setColor(colorBrightness)
+                    brightnessColor(colorBrightness)
+                sleep(.4)
+                showMenu(fileList)
+            previousValue = layout.stepPin.value()
+            jsonSave('colorBrightness', colorBrightness)
         
             
     # This will allow for testing of all buttons and display

@@ -70,16 +70,21 @@ All of these files are located in `Python Files`.
 
 -_blackjack.py:_ Enter blackjack by selecting `Blackjack` on the screen using the rotary encoder. Once you see `Play` press `Top Left` button. In the bet screen, use `Top Left` button to set increment to $10 or `Top Right` button to set increment to $100. Use rotary encoder and spin either right to increase bet or left to decrease bet. To `Confirm` bet, press `Bottom Left` button. `YTtl` is the total of your cards, and `DTtl` is the dealers total. To `Hit` press `Bottom Left` button and to `Stand` press `Bottom Right` button. $10000 will be added to the balance if a balance of $0 is reached.
 
--_JSONFiles/save.json:_ This is where the balance in `blackjack.py`, last selected color for the RGB light, and the high score for `colormemory.py` is stored so it will always be saved.
+-_/JSONFiles/save.json:_ This is where the balance in `blackjack.py`, last selected color for the RGB light, and the high score for `colormemory.py` is stored so it will always be saved. It also includes the last set brightness levels for both the RGB LED and OLED display.
 
--_JSONFiles/color.json:_ This is where the color and their color codes are stored to be used for the RGB light. This could be modified to add more colors.
+-_/JSONFiles/color.json:_ This is where the color and their color codes are stored to be used for the RGB light. This could be modified to add more colors.
 
--_JSONFiles/macros.json:_ The dictionary for the macros are stored here. This is where more macros are added.
+-_/JSONFiles/macros.json:_ The dictionary for the macros are stored here. This is where more macros are added.
+
+-_/LogoAnimation:_ This is a folder that contains all the frames for the launch animation.
 
 _MAIN MENU TIPS_
+
 -Option to lower or higher the volume of the system it is connected to by holding `Top Left` button and turning the rotary encoder.
 
 -Option to lower or higher the brightness of the macropads oled screen by holding `Top Right` button and turning the rotary encoder. There will be a percentage that appears on the top right of the screen that shows what the brightness is at. 0% is not off but it is the lowest brightness for the oled.
+
+-Option to lower or higher the brightness of the macropads RGB LED by holding `Bottom Right` button and turning the rotary encoder. There will be a percentage that appears on the top right of the screen that shows what the brightness is at. 0% is off and 100% is at full brightness.
 
 ## How-To Add Macros
 

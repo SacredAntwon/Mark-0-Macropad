@@ -4,8 +4,8 @@
 
 import layout
 from time import sleep
-import random
 from ws2812 import WS2812
+import random
 import machine
 import math
 import json
@@ -28,9 +28,8 @@ highestScore = saveJson["memoryHighScore"]
 previousValue = True
 buttonBounce = True
 
-# LED pins
-power = machine.Pin(11, machine.Pin.OUT)
-power.value(1)
+# Get LED
+led = WS2812(12, 1, 1)
 
 # Get all color codes from colors.json
 with open('JSONFiles/colors.json', 'r') as f:
@@ -50,7 +49,6 @@ def jsonSave(key, value):
 
 # Function for showing color
 def randomColor(color):
-    led = WS2812(12, 1, 1)
     led.pixels_fill(colors[color])
     led.pixels_show()
 

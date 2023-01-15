@@ -2,7 +2,6 @@
 # Purpose: Allows users to select a color for
 # the RGB Led.
 
-from ws2812 import WS2812
 import machine
 from time import sleep
 import layout
@@ -12,10 +11,6 @@ import json
 # Clear screen
 layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
 layout.oled.show()
-
-# Initialize pins for led
-power = machine.Pin(11, machine.Pin.OUT)
-power.value(1)
 
 # Load colors file from colors.json
 with open('JSONFiles/colors.json', 'r') as f:
@@ -36,7 +31,7 @@ def jsonSave(key, value):
 # Function to display and save color
 def led(pageList, page, button):
     selectedColor = pageList[page][button]
-    led = WS2812(12, 1, 1)
+    led = layout.led
     led.pixels_fill(colors[selectedColor])
     led.pixels_show()
     jsonSave("lastColor", selectedColor)
