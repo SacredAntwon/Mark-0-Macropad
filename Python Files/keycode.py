@@ -1,4 +1,4 @@
-# Author: SacredAntwon
+# Author: Anthony Maida
 # Purpose: DO NOT MODIFY THIS
 # This is shown to view what keys to use in the macros.
 # Every key is meant to start with a capital letter.

@@ -1,4 +1,4 @@
-# Author: SacredAntwon
+# Author: Anthony Maida
 # Purpose: Drawing using the rotary encoder.
 
 from time import sleep

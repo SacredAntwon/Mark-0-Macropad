@@ -1,4 +1,4 @@
-# Author: SacredAntwon
+# Author: Anthony Maida
 # Purpose: Display logo.
 
 import framebuf

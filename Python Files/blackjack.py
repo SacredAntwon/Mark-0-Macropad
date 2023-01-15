@@ -1,4 +1,4 @@
-# Author: SacredAntwon
+# Author: Anthony Maida
 # Purpose: Game of blackjack.
 
 import layout
@@ -7,8 +7,9 @@ from collections import namedtuple
 import random
 import json
 
-# Initialize Display
-layout.oled.init_display()
+# Clear screen
+layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
+layout.oled.show()
 
 # Read save file
 with open('JSONFiles/save.json', 'r') as f:

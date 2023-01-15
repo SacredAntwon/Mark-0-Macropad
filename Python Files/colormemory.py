@@ -1,4 +1,4 @@
-# Author: SacredAntwon
+# Author: Anthony Maida
 # Purpose: Game to memorize colors in a
 # random order.
 
@@ -9,6 +9,10 @@ from ws2812 import WS2812
 import machine
 import math
 import json
+
+# Clear screen
+layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
+layout.oled.show()
 
 # Initializing variables
 memorizeCount = 1
@@ -24,13 +28,9 @@ highestScore = saveJson["memoryHighScore"]
 previousValue = True
 buttonBounce = True
 
-# Initializa display
-layout.oled.init_display()
-
 # LED pins
 power = machine.Pin(11, machine.Pin.OUT)
 power.value(1)
-layout.oled.init_display()
 
 # Get all color codes from colors.json
 with open('JSONFiles/colors.json', 'r') as f:
@@ -188,7 +188,7 @@ for i in range(totalPage):
 
 while buttonBounce:
     layout.oled.text("Ready", 1, 1)
-    layout.oled.text("Highscore: {}".format(highestScore), 1, 21)
+    layout.oled.text(f"Highscore: {highestScore}", 1, 21)
     layout.oled.show()
     if layout.button11.value():
         screen(0, pageList)

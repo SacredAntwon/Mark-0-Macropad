@@ -1,4 +1,4 @@
-# Author: SacredAntwon
+# Author: Anthony Maida
 # Purpose: Basic board information such as
 # pins and screen size.
 
@@ -8,13 +8,19 @@ import machine
 import keyboard
 import mouse
 import consumer_control
-
+import json
+    
 # HID declarations
 k = keyboard.Keyboard()
 cc = consumer_control.Consumer_Control()
 m = mouse.Mouse()
 
 # Screen setup and pins
+with open('JSONFiles/save.json', 'r') as f:
+        saveJson = json.load(f)
+
+screenBrightness = saveJson['screenBrightness']
+
 width = 128
 height = 32
 
@@ -25,6 +31,8 @@ scl = Pin(7)
 i2c = I2C(id=id, scl=scl, sda=sda)
 
 oled = SSD1306_I2C(width=128, height=32, i2c=i2c)
+oled.init_display()
+oled.contrast(screenBrightness)
 
 # Rotary encoder pins
 buttonPin = Pin(27, Pin.IN, Pin.PULL_UP)

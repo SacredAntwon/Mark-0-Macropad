@@ -1,4 +1,4 @@
-# Author: SacredAntwon
+# Author: Anthony Maida
 # Purpose: This file is for testing purposes.
 # Test if your device works correctly with this.
 # Access this menu by pressing the middle left and
@@ -12,8 +12,9 @@ pageOne = ["A", "B", "C", "D", "E", "F"]
 pageTwo = ["1", "2", "3", "4", "5", "6"]
 allPages = [pageOne, pageTwo]
 
-# Initialize display
-layout.oled.init_display()
+# Clear screen
+layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
+layout.oled.show()
 
 # Function for displaying elements
 def screen(page):

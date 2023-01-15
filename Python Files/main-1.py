@@ -1,4 +1,4 @@
-# Author: SacredAntwon
+# Author: Anthony Maida
 # Purpose: Main program to run logo and macropad.
 
 if __name__ == '__main__':

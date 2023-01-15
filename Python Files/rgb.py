@@ -1,4 +1,4 @@
-# Author: SacredAntwon
+# Author: Anthony Maida
 # Purpose: Allows users to select a color for
 # the RGB Led.
 
@@ -9,10 +9,13 @@ import layout
 import math
 import json
 
+# Clear screen
+layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
+layout.oled.show()
+
 # Initialize pins for led
 power = machine.Pin(11, machine.Pin.OUT)
 power.value(1)
-layout.oled.init_display()
 
 # Load colors file from colors.json
 with open('JSONFiles/colors.json', 'r') as f:

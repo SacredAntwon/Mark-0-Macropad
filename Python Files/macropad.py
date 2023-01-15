@@ -1,4 +1,4 @@
-# Author: SacredAntwon
+# Author: Anthony Maida
 # Purpose: Runs the main menu and option selection.
 
 import layout
@@ -20,15 +20,18 @@ fileList = list(macroJson)
 programFiles = ['Etch', 'RGB', 'Blackjack',  'Colormemory']
 fileList += programFiles
 
+# Get the save data for last set screen brightness
+with open('JSONFiles/save.json', 'r') as f:
+    saveJson = json.load(f)
+
+screenBrightness = layout.screenBrightness
+
 # Main menu line constants
 line = 1
 highlight = 1
 shift = 0
 listLength = 0
 totalLines = 3
-
-# Initialize oled
-layout.oled.init_display()
 
 # Rotary encoder button
 previousValue = True
@@ -54,7 +57,18 @@ def setColor():
     led.pixels_fill(colorCode)
     led.pixels_show()
 
+# Function for writing to save.json
+def jsonSave(key, value):
+    saveJson = open("JSONFiles/save.json", "r")
+    jsonObject = json.load(saveJson)
+    saveJson.close()
 
+    jsonObject[key] = value
+
+    saveJson = open("JSONFiles/save.json", "w")
+    json.dump(jsonObject, saveJson)
+    saveJson.close()
+    
 # Splits string and converts each element to keycode (Hex)
 def convertKey(keyString):
     keyList = []
@@ -85,6 +99,15 @@ def macroType(listCateg, pageList, page, button):
     # Modify in macros.py under "wait" key
     sleep(itemSleep)
 
+# Function to display brightness percentage
+def brightnessDisplay(value):
+    # Clear screen
+    layout.oled.fill_rect(78, 0, layout.width, 10, 0)
+    layout.oled.show()
+    # Display percent
+    layout.oled.text(f"{value/2}%", 80, 1)
+    layout.oled.show()
+    
 # Function for displaying screen in a macro category
 def screen(page, allPages):
     layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
@@ -294,7 +317,31 @@ while True:
                 else:
                     layout.cc.send(convertKey("Volup")[0])
             previousValue = layout.stepPin.value()
-
+            
+    # Use to control screen brightness in main menu using top right button
+    # and rotary encoder
+    while layout.button21.value():
+        if previousValue != layout.stepPin.value():
+            if layout.stepPin.value() == False:
+                
+                # Turned Left
+                if layout.directionPin.value() == False and screenBrightness > 0:
+                    screenBrightness -= 20
+                    layout.oled.contrast(screenBrightness)
+                    brightnessDisplay(screenBrightness)
+        
+                # Turned Right
+                elif layout.directionPin.value() and screenBrightness < 200:
+                    screenBrightness += 20
+                    layout.oled.contrast(screenBrightness)
+                    brightnessDisplay(screenBrightness)
+                sleep(.4)
+                showMenu(fileList)
+            previousValue = layout.stepPin.value()
+            jsonSave('screenBrightness', screenBrightness)
+            
+        
+            
     # This will allow for testing of all buttons and display
     if layout.button12.value() and layout.button22.value():
         layout.oled.fill_rect(0, 0, layout.width, layout.height, 0)
