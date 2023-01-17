@@ -36,7 +36,7 @@ _Step 2:_ Once it is installed, click on `Tools` located on the top and then sel
 
 _Step 3:_ Exit the menu and select the `View` button on the top. Click on `Files` and a checkmark should appear next to it.
 
-_Step 4:_ On the left side you will see the `Files` section, the top part being files on your computer and the bottom part being the files on the device.
+_Step 4:_ On the left side you will see the `Files` section, the top part being files on your computer and the bottom part being the files on the macropad which is labeled `Raspberry Pi Pico`.
 
 _Step 5:_ If there are files in your macropad, select all of the files, right click on them and select to delete them from the macropad.
 
