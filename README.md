@@ -16,13 +16,17 @@ _Custom PCB:_ `gerber.zip` stored in `Board Design`
 
 ## Uploading Firmware
 
-_Step 1:_ With the device disconnected from the computer, hold the button labeled `boot` or `b` located on the bottom of the microcontroller which is below the macropad.
+_Before you begin:_ If the macropad begins to run once it is connected to your computer, this means that device already has code in it that allows it to launch once connected to a system. In order to make modifications, `main.py` has to be renamed to `main-1.py`. Follow the `TIPS FOR EDITING` step in the `Uploading Code` category to do this.
 
-_Step 2:_ While holding the boot button on the device, plug it into the computer and let go of the boot button.
+_Step 1:_ Download the repository from GitHub. This is done by clicking the green button labeled `< > Code` on the top of the Mark-0 repository. On the drop down menu, select `Download ZIP` and a compressed folder will be installed on to your computer. Unzip this folder and the folder should be named `Mark-0-Macropad-main`.
 
-_Step 3:_ A new directory should now appear for the device.
+_Step 2:_ With the device disconnected from the computer, hold the button labeled `boot` or `b` located on the bottom of the microcontroller which is below the macropad.
 
-_Step 4:_ Drag the file named `firmware.uf2`, which is located in the `Firmware` folder in this repo, into the device directory and the device should then automatically reboot.
+_Step 3:_ While holding the boot button on the device, plug it into the computer and let go of the boot button.
+
+_Step 4:_ A new directory should now appear connected to your computer labled `RPI-RP2` for the macropad. There should be two files named `INDEX.HTM` and `INFO_UF2.TXT` and we will just leave them there.
+
+_Step 5:_ Drag the file named `firmware.uf2`, which is located in the `Mark-0-Macropad-main/Firmware` folder , into the macropad directory and the macropad should then automatically reboot.
 
 ## Uploading Code
 
@@ -34,17 +38,17 @@ _Step 3:_ Exit the menu and select the `View` button on the top. Click on `Files
 
 _Step 4:_ On the left side you will see the `Files` section, the top part being files on your computer and the bottom part being the files on the device.
 
-_Step 5:_ If there are files in your device, select all of the files and delete them.
+_Step 5:_ If there are files in your macropad, select all of the files, right click on them and select to delete them from the macropad.
 
 _Step 6:_ In the top portion of the `Files` section, find the folder named `Python Files` which should be downloaded from this repo.
 
-_Step 7:_ Select all files in the `Python Files` folder and right click on it. Select the option labeled `Upload to /` and all files should be uploaded to the device.
+_Step 7:_ Select all files in the `Mark-0-Macropad-main/Python Files` folder and right click on it. Select the option labeled `Upload to /` and all files should be uploaded to the device.
 
 _Step 8:_ You could check if the files uploaded successfully by running `main-1.py`, which is a temporary name. To run it press the `Green Play Button` on the top of your screen. This is a good time to modify or add any of the files, including the macros.
 
-_Step 9:_ If no files need to be modified, rename `main-1.py` to `main.py`. Thonny has no option to rename, so rename it on your system and replace the `main-1.py` with `main.py`. This will allow it to boot `main.py` if the device restarts and will not need `Thonny` to run it again.
+_Step 9:_ If no files need to be modified, rename `main-1.py` to `main.py`. Thonny has no option to rename, so rename it on your computer. Delete `main-1.py` from the macropad and upload the renamed `main.py` from the computer to the macropad. This will allow it to boot `main.py` if the device restarts and will not need Thonny to run it again.
 
-_TIPS FOR EDITING:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, you will need to upload a firmware that will rename `main.py` back to `main-1.py`. Here is the link to download a file named [`MicroPython_RenameMainDotPy`](https://forums.raspberrypi.com/download/file.php?id=45227&sid=cec97039a4f7ce336c4e816c979cb3d3). Follow the steps from the 'Uploading Firmware' section to upload `MicroPython_RenameMainDotPy.uf2` firmware. After it is done, upload `firmware.uf2`, which is located in the `Firmware` folder, once again.
+_TIPS FOR EDITING:_ Use `Thonny` if you need/want to modify any of the files. If you are unable to see the files after renaming to `main.py`, you will need to upload a firmware that will rename `main.py` back to `main-1.py`. Here is the link to download a file named [`MicroPython_RenameMainDotPy`](https://forums.raspberrypi.com/download/file.php?id=45227&sid=cec97039a4f7ce336c4e816c979cb3d3). Follow the steps from the `Uploading Firmware` section to upload `MicroPython_RenameMainDotPy.uf2` firmware. After it is done, upload `firmware.uf2`, which is located in the `Mark-0-Macropad-main/Firmware` folder, once again.
 
 ## Files
 
